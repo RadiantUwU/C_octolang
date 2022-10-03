@@ -409,6 +409,7 @@ namespace octolang {
 			reseterror();
 			current.~token();
 			//can now be safely discarded
+			delete this;
 		}
 		token next() noexcept {
 			if (errorflag) return token::error(); //has errored
